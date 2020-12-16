@@ -11,8 +11,15 @@ namespace game
 const char* gameident() { return "cube"; }
 }
 
-void conoutf(int, char const*, ...)
+void conoutfv(int type, const char *fmt, va_list args)
 {
+}
+
+void *operator new[](size_t size, bool err)
+{
+    void *p = malloc(size);
+    if(!p && err) abort();
+    return p;
 }
 
 void cutogz(char *s)
